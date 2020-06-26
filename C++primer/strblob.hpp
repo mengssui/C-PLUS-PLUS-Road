@@ -12,6 +12,9 @@
 #define STRBLOB_H_
 #include <vector>
 #include <memory>
+#include <string>
+#include <cassert>
+#include <stdexcept>
 
 using namespace std;
 class StrBlob {
