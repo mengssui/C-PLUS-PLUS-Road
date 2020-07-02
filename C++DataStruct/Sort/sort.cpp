@@ -27,6 +27,7 @@ int main() {
     int* arr9 = SortTestHelper::copyIntArray(arr1, n);
     int* arr10 = SortTestHelper::copyIntArray(arr1,n);
     int* arr11 = SortTestHelper::copyIntArray(arr1,n);
+    int* arr12 = SortTestHelper::copyIntArray(arr1,n);
 
     // SortTestHelper::testSort("Selection Sort", selectionSort, arr1, n);
     // SortTestHelper::testSort("Bubble Sort", bubbleSort, arr2, n);
@@ -39,6 +40,7 @@ int main() {
     SortTestHelper::testSort("QuickSort3Ways", quickSort3Ways, arr9, n);
     SortTestHelper::testSort("HeapSort", heapSort1,arr10,n);
     SortTestHelper::testSort("HeapSort2", heapSort2, arr11 ,n);
+    SortTestHelper::testSort("HeapSort3", heapSort3, arr12 ,n);
 
     delete [] arr1;
     // delete [] arr2;
@@ -51,5 +53,6 @@ int main() {
     delete [] arr9;
     delete [] arr10;
     delete [] arr11;
+    delete [] arr12;
     return 0;    
 }
