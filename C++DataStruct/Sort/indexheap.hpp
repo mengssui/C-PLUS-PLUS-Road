@@ -7,10 +7,17 @@
 //比较时候使用数据,而交换时候只交换索引
 /*
 如下所示索引堆
-
+***************************************
     0  1  2  3  4  5  6  7  8  9  10
 index  1  2  3  4  5  6  7  8  9  10
  data  13 32 43 56 23 70 30 56 87 33
+  rev   
+***************************************
+  rev[i]表示表示索引i在indexes中的位置
+  indexes[i] = j
+  rev[i] = i
+  indexes[rev[i]] = i
+  rev[indexex[i]] = i
 
 
 */
@@ -29,6 +36,10 @@ class IndexMaxHeap {
   IndexMaxHeap(int capacity) {
     data = new Item[capacity + 1];  //开辟内存空间
     indexes = new int[capacity + 1];
+    reverse = new int[capacity + 1];
+    for (int i = 0; i <= capacity; i++) {
+      reverse[i] = 0; //为0表示不存在
+    }
     count = 0;
     this->capacity = capacity;
   }
@@ -46,6 +57,7 @@ class IndexMaxHeap {
   ~IndexMaxHeap() { 
     delete[] data; 
     delete[] indexes;
+    delete[] reverse;
     }
   int size() { return count; }
   int gcapacity() { return capacity; }
@@ -59,6 +71,7 @@ class IndexMaxHeap {
     i += 1;//变成从1开始索引
     data[i] = item;
     indexes[count + 1] = i;  //数组越界问题
+    reverse[i] = count + 1;
     count++;
     shiftUp(count);
   }
@@ -66,27 +79,42 @@ class IndexMaxHeap {
     assert(count > 0);
     int ret = index[1] - 1;
     swap(indexes[1], indexes[count]);
+    reverse[indexes[1]] = 1;
+    reverse[indexes[count]] = 0;//删除了元素就置0
     count--;
     shiftDown(1);  //向下移动
     return ret;
   }
+  bool contain(int i) {
+    assert(i +1 >=1 && i + 1 <= capacity);
+    return reverse[i+1] != 0;
+  }
+
+
   //给定索引返回值
   Item getItem(int i) {
+    assert(contain(i));
     return data[i + 1];
   }
 
   void change(int i, Item new_item) {
+    assert(contain(i));
     i += 1;
     data[i] = new_item;
 
     //找到indexes[j] ==i j表示data[i]在堆中的位置
-    //找到indexes中指向data[i]的 位置 
+    //找到indexes中指向data[i]的 位置 比较耗时O(n)
+    /*耗时O(n)
     for (int j = 1; j <= count; j++) {
       if (indexes[j] == i) {
         shiftUp(j);
         shiftDown(j);
       }
     }
+    */
+    int j = reverse[i];
+    shiftUp(j);
+    shiftDown(j);
   }
 
   /**
@@ -186,12 +214,15 @@ class IndexMaxHeap {
 
  private:
   Item* data;
-  Item* indexes;
+  int* indexes;
+  int* reverse;
   int count;
   int capacity;
   void shiftUp(int k) {
     while (k > 1 && data[indexes[k / 2]] < data[indexes[k]]) {
       swap(indexes[k / 2], indexes[k]);
+      reverse[indexes[k / 2]] = k / 2;
+      reverse[indexes[k]] = k;
       k /= 2;
     }
   }
@@ -205,6 +236,8 @@ class IndexMaxHeap {
         break;
       }
       swap(indexes[k],indexes[j]);   //对于具有交换的可以想办法能否优化为先找位置在赋值
+      reverse[indexes[k]] = k;
+      reverse[indexes[j]] = j;
       k = j;
     }
   }
