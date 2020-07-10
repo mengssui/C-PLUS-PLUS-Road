@@ -11,4 +11,6 @@
 > 
 
 ## 学习经验感悟同步在博客
-> https://blog.csdn.net/qq_42956667/category_10092658.html
+> C++语言       https://blog.csdn.net/qq_42956667/category_10092658.html
+> 
+> leetcode刷题  https://blog.csdn.net/qq_42956667/category_10102335.html  
