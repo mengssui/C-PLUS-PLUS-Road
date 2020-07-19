@@ -5,7 +5,7 @@
 //This is the main.cpp to sort.
 
 #include "sorttesthelper.hpp"
-#include "MergeSort.hpp"
+#include "mergesort.hpp"
 #include "quicksort.hpp"
 #include "shellsort.hpp"
 #include "insertionsort.hpp"

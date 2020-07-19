@@ -15,6 +15,7 @@
 
 #include <cassert>
 #include <cmath>
+#include <typeinfo>
 #include <iostream>
 using namespace std;
 
