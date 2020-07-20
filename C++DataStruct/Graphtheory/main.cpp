@@ -5,26 +5,46 @@
 #include <random>
 #include "readgraph.h"
 #include "component.h"
-
+#include "path.h"
+#include "shortestpath.h"
 using namespace std;
 
 int main() {
-  //只能用绝对路径
-  // string filename = "D:/MyStudyFile/Study_C_PLUS_PLUS/C-PLUS-PLUS-Road/C++DataStruct/Graphtheory/testG1.txt";
-  string filename1 = "testG1.txt";
-  SparseGraph g1 (13, false);
-  ReadGraph<SparseGraph> readGraph1(g1, filename1);
-  Component<SparseGraph> component1(g1);
-  cout << component1.count() << endl;
 
-  cout << "**********************************"<< endl;
-  string filename2 = "testG2.txt";
-  SparseGraph g2(6,false);
-  ReadGraph<SparseGraph> readGraph2(g2,filename2);
-  Component<SparseGraph> component2(g2);
-  cout << component2.count() <<endl;
+/*测试寻找路径*/
+  string filename = "testG2.txt";
+  SparseGraph g(6, false);
+  ReadGraph<SparseGraph> readGraph(g, filename);
+  g.show();
+  cout << endl;
 
+  Path<SparseGraph> dfs(g,0);
+  cout << "DFS : ";
+  dfs.showPath(5); 
+
+  ShortestPath<SparseGraph> bfs(g,0);
+  cout << "BFS : ";
+  bfs.showPath(5);
   return 0;
+
+
+
+  // //只能用绝对路径
+  // // string filename = "D:/MyStudyFile/Study_C_PLUS_PLUS/C-PLUS-PLUS-Road/C++DataStruct/Graphtheory/testG1.txt";
+  // string filename1 = "testG1.txt";
+  // SparseGraph g1 (13, false);
+  // ReadGraph<SparseGraph> readGraph1(g1, filename1);
+  // Component<SparseGraph> component1(g1);
+  // cout << component1.count() << endl;
+
+  // cout << "**********************************"<< endl;
+  // string filename2 = "testG2.txt";
+  // SparseGraph g2(6,false);
+  // ReadGraph<SparseGraph> readGraph2(g2,filename2);
+  // Component<SparseGraph> component2(g2);
+  // cout << component2.count() <<endl;
+
+  // return 0;
 
 
 /* 随机生成边同时打印各个点的边
