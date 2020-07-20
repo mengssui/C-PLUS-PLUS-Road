@@ -21,12 +21,12 @@ int main() {
   Path<SparseGraph> dfs(g,0);
   cout << "DFS : ";
   dfs.showPath(5); 
-
+  
+/*最短路径*/
   ShortestPath<SparseGraph> bfs(g,0);
   cout << "BFS : ";
   bfs.showPath(5);
   return 0;
-
 
 
   // //只能用绝对路径
