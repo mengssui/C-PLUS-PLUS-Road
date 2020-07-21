@@ -1,5 +1,6 @@
 //author: Mengbw_
 //date: 2020年7月17日
+//计算连通分量
 #ifndef COMPONENT_H_
 #define COMPONENT_H_
 

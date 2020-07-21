@@ -1,5 +1,5 @@
-#ifndef READGRAPH_H_
-#define READGRAPH_H_
+#ifndef WEIGHTREADGRAPH_H_
+#define WEIGHTREADGRAPH_H_
 
 #include <iostream>
 #include <string>
@@ -9,7 +9,7 @@
 
 using namespace std;
 
-template <typename Graph>
+template <typename Graph, typename Weight>
 class ReadGraph {
  private:
   
@@ -23,21 +23,21 @@ class ReadGraph {
     assert(getline(file, line));    
     stringstream ss(line);
     ss >> V >> E;
-
     assert(V == graph.vertex());
 
     for (int i = 0; i < E; i++) {
       assert(getline(file, line));
       stringstream ss(line);
       int a, b;
-      ss >> a >> b;
+      Weight w;
+      ss >> a >> b >> w;
       assert( a >= 0 && a < V);
       assert( b >= 0 && b < V);
-      graph.addEdge(a, b);
+      graph.addEdge(a, b, w);
     }
   }
   ~ReadGraph() { }
 };
 
 
-#endif // READGRAPH_H_
+#endif // WEIGHTREADGRAPH_H_
