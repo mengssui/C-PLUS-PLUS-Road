@@ -36,10 +36,10 @@ class LazyPrimMST {
         marked[i] = false;
       }
       mst.clear();
-      //Lazy prim 算法
-      visit(0);
-      while (!pq.isEmpty()) {
-        Edge<Weight> e = pq.extractMin();
+      //Lazy prim 算法  时间复杂度O(ElogE)
+      visit(0);   //O(E)
+      while (!pq.isEmpty()) {   //这个复杂度O(E)
+        Edge<Weight> e = pq.extractMin();  //logE
         if (marked[e.v()] == marked[e.w()]) continue;
         mst.push_back(e);
         if(!marked[e.v()]) {
@@ -52,8 +52,6 @@ class LazyPrimMST {
       for(int i = 1; i< mst.size(); i++) {
         mstWeight += mst[i].wt();
       }
-
-
     }
   ~LazyPrimMST() {
     delete [] marked;

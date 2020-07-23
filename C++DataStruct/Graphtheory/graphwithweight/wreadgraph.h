@@ -23,6 +23,7 @@ class ReadGraph {
     assert(getline(file, line));    
     stringstream ss(line);
     ss >> V >> E;
+
     assert(V == graph.vertex());
 
     for (int i = 0; i < E; i++) {

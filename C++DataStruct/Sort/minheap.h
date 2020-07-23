@@ -52,6 +52,7 @@ class MinHeap {
   int size() { return count_; }
   int capacity() { return capacity_; }
   bool isEmpty() { return count_ == 0; }
+
   void insert(Item item) {
     assert(count_ + 1 <= capacity_);
     count_++;
@@ -63,8 +64,8 @@ class MinHeap {
     assert(count_ > 0);
     Item ret = data_[1];
     swap(data_[1], data_[count_]);
-    shiftDown(1);
     count_--;
+    shiftDown(1);
     return ret;
   }
   Item getMin() {
