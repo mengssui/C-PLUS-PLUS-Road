@@ -78,4 +78,53 @@ inline void call(const T& a, const T& b) {
 > - for function-like macro, prefer inline function to #define.
 
 ## Item 3: Use const whenever possible.
+- for pointer, if the word const appears to the left of the asterisk(*), the pointed object is constant; if appears to the right, the pointer itself is constant. (who is constant: left value right pointer)
+```cpp
+const Widget* pw;
+Widget const * pw;  //both is ok
+```
+STL iterators are modeled on pointers, an iterator acts much like T* point
+```cpp
+//iterator like : T* const
+const std::vector<int>::iterator iter = vec.begin();
+*iter = 12 ;// Right
+++iter; // Error
 
+// like : const T*
+std::vector<int>::const_iterator cIter = vec.begin();
+cIter = 3; //Error
+++cIter; //Right
+```
+### const Member Funcion
+- WHY : make member function can be used for const objects and know which interface can be modified. 
+- if two functions are different in constness , they can be overload.
+```cpp
+const char& operator[](size_t p) const {...}
+char& operator[](size_t p) {...}
+```
+in const member function, you can't modify member , otherwise you make the member value **mutable**
+```cpp
+class T {
+  public:
+    int length() const;
+  private:
+    mutable int e;  // e can be modified in lenght() 
+}
+```
+### avoid duplication in const and non-const Member function
+use non-const function call const funtion. 
+but it's wrong use const call non-const because it might be modify something.
+
+```cpp
+//you need to add const first and then remove the const.
+const char& operator[](size_t p) const {...}
+char& operator[](size_t p) {
+  return const_cast<char&> (   //remove const
+    static_cast<const T&>(*this)[p] // make *this to const
+  );
+}
+```
+> **REMEMBER**: 
+> 1. Declaring something const helps compilers detect errors.
+> 2. compilers enforce bitwise constness. it mean you can not modify member variable in a const member function otherwise you make the variable mutable
+> 3. if const and non-const member have same implementations, code duplication can be avoid by having non-const call const version.

@@ -5,6 +5,9 @@
 #include <iostream>
 
 using namespace std;
+const int* a = nullptr;
+int const* b = nullptr;  // both is ok
+
 
 class Test {
  public:
