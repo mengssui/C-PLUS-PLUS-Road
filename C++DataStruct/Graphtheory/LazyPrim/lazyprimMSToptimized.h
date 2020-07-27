@@ -16,7 +16,7 @@ template <typename Graph, typename Weight>
 class PrimMST {
  private:
   Graph& G;
-  IndexMinHeap<Weight> ipq;  //最小堆存储边
+  IndexMinHeap<Weight> ipq;  //最小堆存储边的权值
   bool* marked;              //标记是否被切分
   vector<Edge<Weight>> mst;
   vector<Edge<Weight>*> edge_to;
