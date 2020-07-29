@@ -140,6 +140,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Demo.cpp" />
+    <ClCompile Include="Observeralbe.cpp" />
+    <ClCompile Include="Singleton.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Observer.h" />
+    <ClInclude Include="Observeralbe.h" />
+    <ClInclude Include="Singleton.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

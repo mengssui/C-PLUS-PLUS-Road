@@ -18,5 +18,22 @@
     <ClCompile Include="Demo.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Singleton.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Observeralbe.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Singleton.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Observer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Observeralbe.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
