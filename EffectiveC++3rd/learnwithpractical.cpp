@@ -8,20 +8,23 @@ using namespace std;
 const int* a = nullptr;
 int const* b = nullptr;  // both is ok
 
-
 class Test {
  public:
+  Test(int c) : i(c) {}
   enum { n = 4};  //use if not support to use static costant.
   static const int c = 2;  //const declaration
   int score[c];
+  int geti() { return i;
+  }
+ private:
+  int& i;
+  
 }; 
 
 int main() {
   const char* const author1 = "Mengbw";
   const string author("Mengbw");
-  Test x;
-  cout << x.score[1] << " - " << x.score[0] <<endl;
-  cout << author << '\n' << author1 << endl;
+  Test x(3);
   return 0;
 }
 

@@ -128,3 +128,22 @@ char& operator[](size_t p) {
 > 1. Declaring something const helps compilers detect errors.
 > 2. compilers enforce bitwise constness. it mean you can not modify member variable in a const member function otherwise you make the variable mutable
 > 3. if const and non-const member have same implementations, code duplication can be avoid by having non-const call const version.
+
+
+## Item 4: Make sure initial objects before use them.
+- In the C part of C++(see Item 1), it's not guaranteed to initialize. But It's constrast in the non-C part.
+- The best way to do is to always initialize objects before using them.
+- When initializing objects, it's better to initial them in order.
+- If there are too many objects need to be initialized, you can use assignments and make it a private function usually.
+
+```cpp
+class FileSystem {...}
+FileSystem& tfs() {
+  static FileSystem fs;  /// declare and initialize a local static object.
+  return fs;
+}
+```
+> **REMENBER**:
+> 1. Initialize objects of built-in type
+> 2. Use member initialization list rather than assignment and in the same order they declared.
+> 3. Replacing non-local static objects with local static objects.
