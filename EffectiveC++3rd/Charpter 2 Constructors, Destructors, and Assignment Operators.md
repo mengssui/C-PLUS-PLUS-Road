@@ -35,3 +35,35 @@ class Myclass : private Uncopyalbe {...};
 Leaf(const Leaf&) = delete;
 Leaf& operator=(const Leaf&) = delete;
 ```
+
+## Item 7: Declare destructors virtual in polymorphic base classes
+- When a derived class object is deleted through a pointer to a base class with a non-virtual destructor, It's typically destroy the derived part. (**Partially destroyed**)
+- Eliminating the problem is simple: **give the base class a virtual destructor**. In this way, it will destroy the entire object includeing all its derived class parts.
+
+```cpp
+class TimeKeeper {
+ public:
+  TimeKeeper();
+  virtual ~TimeKeeper();
+  ...
+};
+TimeKeeper* ptk = getTimeKeeper();
+...
+delete ptk;
+```
+- Any class with virtual functions should almost certainly have a virtual destructor.
+- vptr 虚指针
+- vtbl 虚表
+- every class with virtual functions should have relevant vtbl.
+- Only a class with virtual functions should declare virtual destructor.
+- if a class is not designed for polymorphic base class, they don't need virtual destructor.
+
+> **REMEMBER**:
+> 1. Polymorphic base classes should declare virtual destructors.
+> 2. if a class has any virtual functions,it should also have a virtual destructor.
+> 3. Classes not designed to be base classes or not designed to be used polymorphically should not declare virtual destructors.
+
+## Item 8: Prevent exceptions from leaving destructors.
+> **REMEMBER**: 
+> 1. Destructors should never emit exceptions. If functions called in a destructor may throw, the destructor should catch any exceptions then swallow them or terminate the program.
+> 2. If class clients need to be able to react to exception, the class should provide a regular (not destructor) function that performs the operation.
