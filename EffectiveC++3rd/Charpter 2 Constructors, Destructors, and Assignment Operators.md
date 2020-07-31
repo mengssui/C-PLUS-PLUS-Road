@@ -67,3 +67,25 @@ delete ptk;
 > **REMEMBER**: 
 > 1. Destructors should never emit exceptions. If functions called in a destructor may throw, the destructor should catch any exceptions then swallow them or terminate the program.
 > 2. If class clients need to be able to react to exception, the class should provide a regular (not destructor) function that performs the operation.
+
+
+## Item 9: Never call virtual functions during construction or destruction.
+- Due to base class construction is executed early than derived class, when base class executing construction derived class have not initialized.
+- Destruction is the same.
+  
+> **REMEMBER**: 
+> 1. Do not call virtual funtions during construction or destruction, because such calls will never go to a more derived class than that of the currently executing.
+
+## Item 10: Have assignment operators return a reference to *this
+```cpp
+class Widget {
+ public:
+  Widget& operator=(const Widget& rhs) {
+    ...
+    return *this;
+  } 
+}
+```
+> **REMEMBER**：
+>
+> 1.Have assignment operators return a reference to *this
