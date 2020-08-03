@@ -13,10 +13,10 @@
 ```cpp
 //not declare in your class, but declare in a base class.
 class Uncopyable {
- protected:
+protected:
   Uncopyable() { }
   ~Uncopyable() { }
- private:
+private:
   Uncopyable(const Uncopyable&);
   Uncopyalbe& operator=(const Uncopyable&);
 }
@@ -42,7 +42,7 @@ Leaf& operator=(const Leaf&) = delete;
 
 ```cpp
 class TimeKeeper {
- public:
+public:
   TimeKeeper();
   virtual ~TimeKeeper();
   ...
@@ -79,7 +79,7 @@ delete ptk;
 ## Item 10: Have assignment operators return a reference to *this
 ```cpp
 class Widget {
- public:
+public:
   Widget& operator=(const Widget& rhs) {
     ...
     return *this;
@@ -89,3 +89,36 @@ class Widget {
 > **REMEMBER**：
 >
 > 1.Have assignment operators return a reference to *this
+
+## Item 11: Handle assignment to self in operator = .
+- tradition way: use identity test, but it's not exception-safe.
+```cpp
+Widget& Widget::operator=(const Widget& rhs) {
+  if (this == &rhs) return *this;
+  delete pb;
+  pb = new Bitmap(*rhs.pb); //not exveption-safe if destruction fail.
+  return *this;
+}
+```
+```cpp
+//better way: focus on exception safe not 
+Widget& Widget::operator=(const Widget& rhs) {
+  Bitmap* pOrig = pb;
+  pb = new Bitmap(*rhs.pb);
+  delete pOrig;
+  return *this;
+}
+```
+- The best way is use copy and swap. (See Item 29)
+
+> **REMEMBER**:
+> 1. Make sure operator= is well-behaved when an object is assigned to itself.Techniques include coparing addresses of source and target objects, careful statement ordering ,and copy-and-swap
+> 2. Make sure that any function operating on more than one object behaves correctly if two or more of the objects are the same.
+
+## Item 12: Copy all parts of an object
+
+- In this book, call copy assignemt and copy construction COPYING FUNCTIONS.
+- 
+> **REMEMBER**:
+> 1. Copying funtions should be sure to copy all of an object's data members and all of its base class parts
+> 2. Do not try to implement one of the copying funtions in terms of the other. Instead, put common functionality in a third funtion that both call.
