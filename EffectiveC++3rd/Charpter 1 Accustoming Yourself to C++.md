@@ -1,3 +1,11 @@
+- [Charpter 1:  Accustoming yourself to C++](#charpter-1-accustoming-yourself-to-c)
+  - [Item 1: View C++ as a federation of languages](#item-1-view-c-as-a-federation-of-languages)
+  - [Item 2: Prefer const, enum and inline to #define](#item-2-prefer-const-enum-and-inline-to-define)
+    - [two sepcial cases:](#two-sepcial-cases)
+  - [Item 3: Use const whenever possible.](#item-3-use-const-whenever-possible)
+    - [const Member Funcion](#const-member-funcion)
+    - [avoid duplication in const and non-const Member function](#avoid-duplication-in-const-and-non-const-member-function)
+  - [Item 4: Make sure initial objects before use them.](#item-4-make-sure-initial-objects-before-use-them)
 # Charpter 1:  Accustoming yourself to C++
 
 ## Item 1: View C++ as a federation of languages

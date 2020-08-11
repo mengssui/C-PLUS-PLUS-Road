@@ -100,7 +100,6 @@ void runQueries(std::ifstream& infile) {
         if (!(std::cin>>s) || s == "q") break;
         print(std::cout, tq.query(s)) <<std::endl;
     }
-    
 }
 
 
