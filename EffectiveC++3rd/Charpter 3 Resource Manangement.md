@@ -1,10 +1,9 @@
-- [Charpter 3 Resource Manangement](#charpter-3-resource-manangement)
-  - [Item 13: Use objects to manages resources](#item-13-use-objects-to-manages-resources)
-  - [Item 14: Think carefully about copying behavior in resouce-managing classes](#item-14-think-carefully-about-copying-behavior-in-resouce-managing-classes)
-  - [Item 15: Provide access to raw resources in resource-management classes](#item-15-provide-access-to-raw-resources-in-resource-management-classes)
-  - [Item 16: Use the same form in corresponding uses of new and delete.](#item-16-use-the-same-form-in-corresponding-uses-of-new-and-delete)
-  - [Item 17: Store newed obejects in smart pointers in standalone statements](#item-17-store-newed-obejects-in-smart-pointers-in-standalone-statements)
 # Charpter 3 Resource Manangement
+
+---
+
+[toc]
+
 - Regardless of the resource, it's important that it be released when you're finished with it.
 - Common resources:
   - file descriptors
@@ -37,6 +36,7 @@
 - It also reload pointer dereferenceing and operator-> and operator*.
 
 > **REMEMBER**:
+>
 > 1. Access may be via explict conversion or implict conversion. In general, explict conversion is safer, but implict conversion is more convenient for clients.
 
 ## Item 16: Use the same form in corresponding uses of new and delete.
@@ -62,4 +62,5 @@ std::share_ptr<Widget> pw(new Widget);
 processWidget(pw, priority());
 ```
 > **REMEMBER**:
+>
 > 1. Store newed objects in smart pointers in standalone statement. Failure to do this can lead to subtle resource leaks when exceptions are thrown.

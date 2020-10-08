@@ -1,5 +1,9 @@
 # Charpter 4 Designs and  Declarations
 
+---
+
+[toc]
+
 ## Item 18: Make interfaces easy to use correctly and hard to use incorrectly
 
 - Way to facilitate correct use include consistency in interfaces and behavioral compatibility with built-in types.
@@ -84,27 +88,4 @@ result = 2.operator*(oneHalf); //XXXXXX错误XXXXX
 > 2. if you offer a member swap, also offer a non-member swap that calls the memeber.For classes(not templates), specialize std::swap to.
 > 3. When calling swap, employ using declaration for std::swap, then call swap without namespace qualification. 
 > 4. It's fine to totally specialize std templates for user-defined types, but never try to add something completely new to std.
-
-## Item 26: Postpone variable definitions as long as possible
-
-> **REMEMBER**:
->
-> 1. Postpone variable definitions as long as possible. It increases program clarity and improve program efficiency.
-
-
-
-## Item 27: Minimize casting.
-
-> **REMEMBER**: 
->
-> 1. Avoid casts whenever practical, especially dynamic_casts in performance-sensitive code. If a design requires casting, try to develop a cast-free alternative.
-> 2. When casting is necessary, try to hide it inside a function. Clients can then call the function instead of putting casts in their own code.
-> 3. Prefer C++-style casts to old-style casts. They are easier to see, and they are more specific about what they do.
-
-
-
-
-
-
-
 

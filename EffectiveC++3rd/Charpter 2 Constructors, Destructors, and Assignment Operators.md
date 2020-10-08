@@ -1,17 +1,14 @@
-- [Charpter 2 Constructors, Destructors, and Assignment Operators](#charpter-2-constructors-destructors-and-assignment-operators)
-  - [Item 5: Know what functions C++ silently write and calls](#item-5-know-what-functions-c-silently-write-and-calls)
-  - [Item 6: Explicitly disallow the use of compiler-generated functions if you don't want.](#item-6-explicitly-disallow-the-use-of-compiler-generated-functions-if-you-dont-want)
-  - [Item 7: Declare destructors virtual in polymorphic base classes](#item-7-declare-destructors-virtual-in-polymorphic-base-classes)
-  - [Item 8: Prevent exceptions from leaving destructors.](#item-8-prevent-exceptions-from-leaving-destructors)
-  - [Item 9: Never call virtual functions during construction or destruction.](#item-9-never-call-virtual-functions-during-construction-or-destruction)
-  - [Item 10: Have assignment operators return a reference to *this](#item-10-have-assignment-operators-return-a-reference-to-this)
-  - [Item 11: Handle assignment to self in operator = .](#item-11-handle-assignment-to-self-in-operator--)
-  - [Item 12: Copy all parts of an object](#item-12-copy-all-parts-of-an-object)
 # Charpter 2 Constructors, Destructors, and Assignment Operators
 
+---
+
+[toc]
+
 ## Item 5: Know what functions C++ silently write and calls
+
 - After process of C++, compiler will declare their own version of copy constructor, copy assignment operator, a destructor and constructors if you don't declare them yourself. All of them are public and inline.
 > **REMEMBER**:
+>
 > 1. if class have reference member or const members, compilers can't declare copy operator.
 
 ## Item 6: Explicitly disallow the use of compiler-generated functions if you don't want.
@@ -83,6 +80,7 @@ delete ptk;
 - Destruction is the same.
   
 > **REMEMBER**: 
+>
 > 1. Do not call virtual funtions during construction or destruction, because such calls will never go to a more derived class than that of the currently executing.
 
 ## Item 10: Have assignment operators return a reference to *this
