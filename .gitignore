@@ -360,6 +360,11 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+<<<<<<< HEAD
 
 # execute files
 *.out
+=======
+# execute file
+*.exe
+>>>>>>> 083e06fbf639656e8205cc8cb5519ee27f936062
