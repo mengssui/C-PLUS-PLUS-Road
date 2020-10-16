@@ -39,11 +39,11 @@ private:
 
     int partition(vector<int>& nums, int l, int r) {
         
-        int pivot = nums[l];
+        int pivot = nums[rand()%(r-l+1)+l]; //optimization 1
+        swap(nums[l], pivot);
         int j = l;
         for(int i = j+1; i <= r; ++i) {
-            if (nums[i] < pivot) {swap(nums[i], nums[j+1]), j++;
-        }
+            if (nums[i] < pivot) swap(nums[i], nums[j+1]), j++;
         }
         swap(nums[l], nums[j]);
         return j;

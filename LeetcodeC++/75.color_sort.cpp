@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <vector>
+#include <cstdlib>
 
 void swap(int &a, int &b) {
     __typeof(a) tmp = a;
@@ -19,6 +20,29 @@ using namespace std;
 class Solution {
 
 public:
+    //three ways quick sort
+    void sortColors2(vector<int>& nums)  {
+        int lt = -1;
+        int gt = nums.size();
+        int i = 0;
+        int pivot = nums[rand()%(gt)];
+        swap(pivot , nums[0]);
+        while (i < gt) {
+            if (nums[i] == pivot) {
+                i++;
+            } else if (nums[i] < pivot) {
+                lt++;
+                swap(nums[i], nums[lt]);
+                i++;
+            } else {
+                gt--;
+                swap(nums[i], nums[gt]);
+            }
+            swap(nums[0])
+        }
+    }
+
+
     void sortColors(vector<int>& nums) {
         if(nums.size() <= 1) return;
         int idx = -1;
@@ -52,7 +76,7 @@ int main() {
 
 
     Solution s;
-    s.sortColors(nums);
+    s.sortColors2(nums);
 
     return 0;
 }
