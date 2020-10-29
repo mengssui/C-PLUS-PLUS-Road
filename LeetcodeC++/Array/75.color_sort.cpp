@@ -22,15 +22,14 @@ class Solution {
 public:
     //three ways quick sort
     void sortColors2(vector<int>& nums)  {
-        int lt = -1;
+        int lt = 0;
         int gt = nums.size();
-        int i = 0;
-        int pivot = nums[rand()%(gt)];
-        swap(pivot , nums[0]);
+        int i = 1;
+        swap(nums[rand()%(gt)] , nums[0]);
         while (i < gt) {
-            if (nums[i] == pivot) {
+            if (nums[i] == nums[0]) {
                 i++;
-            } else if (nums[i] < pivot) {
+            } else if (nums[i] < nums[0]) {
                 lt++;
                 swap(nums[i], nums[lt]);
                 i++;
@@ -38,8 +37,9 @@ public:
                 gt--;
                 swap(nums[i], nums[gt]);
             }
-            swap(nums[0])
+            swap(nums[0], nums[lt]);
         }
+        return;
     }
 
 
@@ -76,7 +76,10 @@ int main() {
 
 
     Solution s;
-    s.sortColors2(nums);
+    s.sortColors(nums);
+    for (int i = 0; i < nums.size(); ++i) {
+        cout << nums[i] << endl;
+    }
 
     return 0;
 }
