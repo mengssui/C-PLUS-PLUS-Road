@@ -4,7 +4,7 @@
 
 [toc]
 
-## Item 32: make sure public inheritance models "is - a"
+## Item 32: make sure public inheritance models "is-a"
 
 > **REMEMBER:**
 >
@@ -70,7 +70,14 @@
 > **REMEMBER:**
 >
 > 1. Private inheritance means is-implemented-in-terms of. It's usually inferior to composition, but it makes sense when a derived class needs access to protected base class members or needs to redefine inherited virtual functions. 
-> 2.  Unlike composition, private inheritance can enable the empty base optimization. This can be important for library developers who strive to minimize object sizes.
+> 2. Unlike composition, private inheritance can enable the empty base optimization. This can be important for library developers who strive to minimize object sizes.
 
 
 
+## Item 40: Use multiple inheritance judiciously
+
+> **REMEMBER:**
+>
+> 1. Multiple inheritance is more complex than single inheritance. It can lead to new ambiguity issues and to the need for virtual inheritance. 
+> 2. Virtual inheritance imposes costs in size, speed, and complexity of initialization and assignment. It's most practical when virtual base classes have no data. 
+> 3. Multiple inheritance does have legitimate uses. One scenario involves combining public inheritance from an Interface class with private inheritance from a class that helps with implementation.
