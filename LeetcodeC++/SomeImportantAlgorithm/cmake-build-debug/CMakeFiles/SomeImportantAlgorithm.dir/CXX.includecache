@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+E:/MyStudyFile/Study_C_PLUS_PLUS/C-PLUS-PLUS-Road/LeetcodeC++/SomeImportantAlgorithm/main.cpp
+iostream
+-
+algorithm
+-
+vector
+-
+
