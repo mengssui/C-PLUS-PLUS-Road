@@ -1,0 +1,9 @@
+In file included from bsa.cc:1:0:
+bsa.cc:10:1: error: invalid application of ‘sizeof’ to incomplete type ‘boost::STATIC_ASSERTION_FAILURE<false>’
+ BOOST_STATIC_ASSERT(sizeof(int) == sizeof(short));
+ ^
+bsa.cc:10:1: error: template argument 1 is invalid
+ BOOST_STATIC_ASSERT(sizeof(int) == sizeof(short));
+ ^
+cc1plus: fatal error: ./: No such file or directory
+compilation terminated.
