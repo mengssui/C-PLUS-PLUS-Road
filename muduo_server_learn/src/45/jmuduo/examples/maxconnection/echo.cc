@@ -1,0 +1,67 @@
+/*
+ * @Descripttion: 
+ * @version: 0.1
+ * @Author: Mengbw
+ * @Date: 2021-05-10 15:52:34
+ * @LastEditors: Mengbw
+ * @LastEditTime: 2021-05-10 15:52:35
+ */
+#include "echo.h"
+
+#include <muduo/base/Logging.h>
+
+#include <boost/bind.hpp>
+
+using namespace muduo;
+using namespace muduo::net;
+
+EchoServer::EchoServer(EventLoop* loop,
+                       const InetAddress& listenAddr,
+                       int maxConnections)
+  : loop_(loop),
+    server_(loop, listenAddr, "EchoServer"),
+    numConnected_(0),
+    kMaxConnections_(maxConnections)
+{
+  server_.setConnectionCallback(
+      boost::bind(&EchoServer::onConnection, this, _1));
+  server_.setMessageCallback(
+      boost::bind(&EchoServer::onMessage, this, _1, _2, _3));
+}
+
+void EchoServer::start()
+{
+  server_.start();
+}
+
+void EchoServer::onConnection(const TcpConnectionPtr& conn)
+{
+  LOG_INFO << "EchoServer - " << conn->peerAddress().toIpPort() << " -> "
+           << conn->localAddress().toIpPort() << " is "
+           << (conn->connected() ? "UP" : "DOWN");
+
+  if (conn->connected())
+  {
+    ++numConnected_;
+    if (numConnected_ > kMaxConnections_)
+    {
+      conn->send("too many connection!");
+      conn->shutdown();
+    }
+  }
+  else
+  {
+    --numConnected_;
+  }
+  LOG_INFO << "numConnected = " << numConnected_;
+}
+
+void EchoServer::onMessage(const TcpConnectionPtr& conn,
+                           Buffer* buf,
+                           Timestamp time)
+{
+  string msg(buf->retrieveAllAsString());
+  LOG_INFO << conn->name() << " echo " << msg.size() << " bytes at " << time.toString();
+  conn->send(msg);
+}
+
