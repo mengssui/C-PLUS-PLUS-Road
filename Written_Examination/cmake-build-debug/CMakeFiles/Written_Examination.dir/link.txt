@@ -1,0 +1,3 @@
+"D:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\Written_Examination.dir/objects.a
+C:\mingw64\bin\ar.exe cr CMakeFiles\Written_Examination.dir/objects.a @CMakeFiles\Written_Examination.dir\objects1.rsp
+C:\mingw64\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\Written_Examination.dir/objects.a -Wl,--no-whole-archive  -o Written_Examination.exe -Wl,--out-implib,libWritten_Examination.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Written_Examination.dir\linklibs.rsp

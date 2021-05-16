@@ -142,32 +142,59 @@ SomeImportantAlgorithm/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SomeImportantAlgorithm.dir\build.make CMakeFiles/SomeImportantAlgorithm.dir/build
 .PHONY : SomeImportantAlgorithm/fast
 
-main.obj: main.cpp.obj
+3.thread.obj: 3.thread.cpp.obj
 
-.PHONY : main.obj
+.PHONY : 3.thread.obj
 
 # target to build an object file
-main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SomeImportantAlgorithm.dir\build.make CMakeFiles/SomeImportantAlgorithm.dir/main.cpp.obj
-.PHONY : main.cpp.obj
+3.thread.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SomeImportantAlgorithm.dir\build.make CMakeFiles/SomeImportantAlgorithm.dir/3.thread.cpp.obj
+.PHONY : 3.thread.cpp.obj
 
-main.i: main.cpp.i
+3.thread.i: 3.thread.cpp.i
 
-.PHONY : main.i
+.PHONY : 3.thread.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SomeImportantAlgorithm.dir\build.make CMakeFiles/SomeImportantAlgorithm.dir/main.cpp.i
-.PHONY : main.cpp.i
+3.thread.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SomeImportantAlgorithm.dir\build.make CMakeFiles/SomeImportantAlgorithm.dir/3.thread.cpp.i
+.PHONY : 3.thread.cpp.i
 
-main.s: main.cpp.s
+3.thread.s: 3.thread.cpp.s
 
-.PHONY : main.s
+.PHONY : 3.thread.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SomeImportantAlgorithm.dir\build.make CMakeFiles/SomeImportantAlgorithm.dir/main.cpp.s
-.PHONY : main.cpp.s
+3.thread.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SomeImportantAlgorithm.dir\build.make CMakeFiles/SomeImportantAlgorithm.dir/3.thread.cpp.s
+.PHONY : 3.thread.cpp.s
+
+Sort.obj: Sort.cpp.obj
+
+.PHONY : Sort.obj
+
+# target to build an object file
+Sort.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SomeImportantAlgorithm.dir\build.make CMakeFiles/SomeImportantAlgorithm.dir/Sort.cpp.obj
+.PHONY : Sort.cpp.obj
+
+Sort.i: Sort.cpp.i
+
+.PHONY : Sort.i
+
+# target to preprocess a source file
+Sort.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SomeImportantAlgorithm.dir\build.make CMakeFiles/SomeImportantAlgorithm.dir/Sort.cpp.i
+.PHONY : Sort.cpp.i
+
+Sort.s: Sort.cpp.s
+
+.PHONY : Sort.s
+
+# target to generate assembly for a file
+Sort.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SomeImportantAlgorithm.dir\build.make CMakeFiles/SomeImportantAlgorithm.dir/Sort.cpp.s
+.PHONY : Sort.cpp.s
 
 # Help Target
 help:
@@ -178,9 +205,12 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... SomeImportantAlgorithm
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
+	@echo ... 3.thread.obj
+	@echo ... 3.thread.i
+	@echo ... 3.thread.s
+	@echo ... Sort.obj
+	@echo ... Sort.i
+	@echo ... Sort.s
 .PHONY : help
 
 

@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+E:/MyStudyFile/Study_C_PLUS_PLUS/C-PLUS-PLUS-Road/Written_Examination/Used/360/1.test.cpp
+algorithm
+-
+string
+-
+iostream
+-
+

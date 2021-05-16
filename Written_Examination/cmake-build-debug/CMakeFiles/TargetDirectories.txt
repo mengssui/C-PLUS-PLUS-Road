@@ -1,0 +1,5 @@
+E:/MyStudyFile/Study_C_PLUS_PLUS/C-PLUS-PLUS-Road/Written_Examination/cmake-build-debug/CMakeFiles/1.test.dir
+E:/MyStudyFile/Study_C_PLUS_PLUS/C-PLUS-PLUS-Road/Written_Examination/cmake-build-debug/CMakeFiles/Written_Examination.dir
+E:/MyStudyFile/Study_C_PLUS_PLUS/C-PLUS-PLUS-Road/Written_Examination/cmake-build-debug/CMakeFiles/2.test.dir
+E:/MyStudyFile/Study_C_PLUS_PLUS/C-PLUS-PLUS-Road/Written_Examination/cmake-build-debug/CMakeFiles/edit_cache.dir
+E:/MyStudyFile/Study_C_PLUS_PLUS/C-PLUS-PLUS-Road/Written_Examination/cmake-build-debug/CMakeFiles/rebuild_cache.dir

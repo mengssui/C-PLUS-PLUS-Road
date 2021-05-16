@@ -76,32 +76,47 @@ include CMakeFiles/SomeImportantAlgorithm.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/SomeImportantAlgorithm.dir/flags.make
 
-CMakeFiles/SomeImportantAlgorithm.dir/main.cpp.obj: CMakeFiles/SomeImportantAlgorithm.dir/flags.make
-CMakeFiles/SomeImportantAlgorithm.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\MyStudyFile\Study_C_PLUS_PLUS\C-PLUS-PLUS-Road\LeetcodeC++\SomeImportantAlgorithm\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SomeImportantAlgorithm.dir/main.cpp.obj"
-	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SomeImportantAlgorithm.dir\main.cpp.obj -c E:\MyStudyFile\Study_C_PLUS_PLUS\C-PLUS-PLUS-Road\LeetcodeC++\SomeImportantAlgorithm\main.cpp
+CMakeFiles/SomeImportantAlgorithm.dir/Sort.cpp.obj: CMakeFiles/SomeImportantAlgorithm.dir/flags.make
+CMakeFiles/SomeImportantAlgorithm.dir/Sort.cpp.obj: ../Sort.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\MyStudyFile\Study_C_PLUS_PLUS\C-PLUS-PLUS-Road\LeetcodeC++\SomeImportantAlgorithm\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SomeImportantAlgorithm.dir/Sort.cpp.obj"
+	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SomeImportantAlgorithm.dir\Sort.cpp.obj -c E:\MyStudyFile\Study_C_PLUS_PLUS\C-PLUS-PLUS-Road\LeetcodeC++\SomeImportantAlgorithm\Sort.cpp
 
-CMakeFiles/SomeImportantAlgorithm.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SomeImportantAlgorithm.dir/main.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\MyStudyFile\Study_C_PLUS_PLUS\C-PLUS-PLUS-Road\LeetcodeC++\SomeImportantAlgorithm\main.cpp > CMakeFiles\SomeImportantAlgorithm.dir\main.cpp.i
+CMakeFiles/SomeImportantAlgorithm.dir/Sort.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SomeImportantAlgorithm.dir/Sort.cpp.i"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\MyStudyFile\Study_C_PLUS_PLUS\C-PLUS-PLUS-Road\LeetcodeC++\SomeImportantAlgorithm\Sort.cpp > CMakeFiles\SomeImportantAlgorithm.dir\Sort.cpp.i
 
-CMakeFiles/SomeImportantAlgorithm.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SomeImportantAlgorithm.dir/main.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\MyStudyFile\Study_C_PLUS_PLUS\C-PLUS-PLUS-Road\LeetcodeC++\SomeImportantAlgorithm\main.cpp -o CMakeFiles\SomeImportantAlgorithm.dir\main.cpp.s
+CMakeFiles/SomeImportantAlgorithm.dir/Sort.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SomeImportantAlgorithm.dir/Sort.cpp.s"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\MyStudyFile\Study_C_PLUS_PLUS\C-PLUS-PLUS-Road\LeetcodeC++\SomeImportantAlgorithm\Sort.cpp -o CMakeFiles\SomeImportantAlgorithm.dir\Sort.cpp.s
+
+CMakeFiles/SomeImportantAlgorithm.dir/3.thread.cpp.obj: CMakeFiles/SomeImportantAlgorithm.dir/flags.make
+CMakeFiles/SomeImportantAlgorithm.dir/3.thread.cpp.obj: ../3.thread.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\MyStudyFile\Study_C_PLUS_PLUS\C-PLUS-PLUS-Road\LeetcodeC++\SomeImportantAlgorithm\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SomeImportantAlgorithm.dir/3.thread.cpp.obj"
+	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SomeImportantAlgorithm.dir\3.thread.cpp.obj -c E:\MyStudyFile\Study_C_PLUS_PLUS\C-PLUS-PLUS-Road\LeetcodeC++\SomeImportantAlgorithm\3.thread.cpp
+
+CMakeFiles/SomeImportantAlgorithm.dir/3.thread.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SomeImportantAlgorithm.dir/3.thread.cpp.i"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\MyStudyFile\Study_C_PLUS_PLUS\C-PLUS-PLUS-Road\LeetcodeC++\SomeImportantAlgorithm\3.thread.cpp > CMakeFiles\SomeImportantAlgorithm.dir\3.thread.cpp.i
+
+CMakeFiles/SomeImportantAlgorithm.dir/3.thread.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SomeImportantAlgorithm.dir/3.thread.cpp.s"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\MyStudyFile\Study_C_PLUS_PLUS\C-PLUS-PLUS-Road\LeetcodeC++\SomeImportantAlgorithm\3.thread.cpp -o CMakeFiles\SomeImportantAlgorithm.dir\3.thread.cpp.s
 
 # Object files for target SomeImportantAlgorithm
 SomeImportantAlgorithm_OBJECTS = \
-"CMakeFiles/SomeImportantAlgorithm.dir/main.cpp.obj"
+"CMakeFiles/SomeImportantAlgorithm.dir/Sort.cpp.obj" \
+"CMakeFiles/SomeImportantAlgorithm.dir/3.thread.cpp.obj"
 
 # External object files for target SomeImportantAlgorithm
 SomeImportantAlgorithm_EXTERNAL_OBJECTS =
 
-SomeImportantAlgorithm.exe: CMakeFiles/SomeImportantAlgorithm.dir/main.cpp.obj
+SomeImportantAlgorithm.exe: CMakeFiles/SomeImportantAlgorithm.dir/Sort.cpp.obj
+SomeImportantAlgorithm.exe: CMakeFiles/SomeImportantAlgorithm.dir/3.thread.cpp.obj
 SomeImportantAlgorithm.exe: CMakeFiles/SomeImportantAlgorithm.dir/build.make
 SomeImportantAlgorithm.exe: CMakeFiles/SomeImportantAlgorithm.dir/linklibs.rsp
 SomeImportantAlgorithm.exe: CMakeFiles/SomeImportantAlgorithm.dir/objects1.rsp
 SomeImportantAlgorithm.exe: CMakeFiles/SomeImportantAlgorithm.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=E:\MyStudyFile\Study_C_PLUS_PLUS\C-PLUS-PLUS-Road\LeetcodeC++\SomeImportantAlgorithm\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable SomeImportantAlgorithm.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=E:\MyStudyFile\Study_C_PLUS_PLUS\C-PLUS-PLUS-Road\LeetcodeC++\SomeImportantAlgorithm\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable SomeImportantAlgorithm.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\SomeImportantAlgorithm.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

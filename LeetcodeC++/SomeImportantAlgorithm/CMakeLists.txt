@@ -3,4 +3,4 @@ project(SomeImportantAlgorithm)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(SomeImportantAlgorithm main.cpp)
+add_executable(SomeImportantAlgorithm Sort.cpp 3.thread.cpp)

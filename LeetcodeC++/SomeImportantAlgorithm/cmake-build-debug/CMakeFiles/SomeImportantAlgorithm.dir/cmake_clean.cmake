@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/SomeImportantAlgorithm.dir/main.cpp.obj"
+  "CMakeFiles/SomeImportantAlgorithm.dir/3.thread.cpp.obj"
+  "CMakeFiles/SomeImportantAlgorithm.dir/Sort.cpp.obj"
   "SomeImportantAlgorithm.exe"
   "SomeImportantAlgorithm.exe.manifest"
   "SomeImportantAlgorithm.pdb"

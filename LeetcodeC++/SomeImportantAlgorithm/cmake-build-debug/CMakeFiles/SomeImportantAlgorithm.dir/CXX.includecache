@@ -6,7 +6,15 @@
 
 #IncludeRegexTransform: 
 
-E:/MyStudyFile/Study_C_PLUS_PLUS/C-PLUS-PLUS-Road/LeetcodeC++/SomeImportantAlgorithm/main.cpp
+E:/MyStudyFile/Study_C_PLUS_PLUS/C-PLUS-PLUS-Road/LeetcodeC++/SomeImportantAlgorithm/3.thread.cpp
+iostream
+-
+functional
+-
+thread
+-
+
+E:/MyStudyFile/Study_C_PLUS_PLUS/C-PLUS-PLUS-Road/LeetcodeC++/SomeImportantAlgorithm/Sort.cpp
 iostream
 -
 algorithm
