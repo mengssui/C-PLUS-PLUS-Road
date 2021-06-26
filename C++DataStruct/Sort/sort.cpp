@@ -1,3 +1,11 @@
+/*
+ * @Descripttion: 
+ * @version: 0.1
+ * @Author: Mengbw
+ * @Date: 2021-06-26 12:33:13
+ * @LastEditors: Mengbw
+ * @LastEditTime: 2021-06-26 15:36:57
+ */
 //Copyright
 //License
 //Author：Mengbw_
@@ -19,7 +27,7 @@ int main() {
     int* arr1 = SortTestHelper::generateRandomArray(n, 0, n);
     // int* arr2 = SortTestHelper::copyIntArray(arr1, n);
     // int* arr3 = SortTestHelper::copyIntArray(arr1, n);
-    // int* arr4 = SortTestHelper::copyIntArray(arr1, n);
+    int* arr4 = SortTestHelper::copyIntArray(arr1, n);
     // int* arr5 = SortTestHelper::copyIntArray(arr1, n);
     // int* arr6 = SortTestHelper::copyIntArray(arr1, n);
     int* arr7 = SortTestHelper::copyIntArray(arr1, n);
@@ -32,7 +40,7 @@ int main() {
     // SortTestHelper::testSort("Selection Sort", selectionSort, arr1, n);
     // SortTestHelper::testSort("Bubble Sort", bubbleSort, arr2, n);
     // SortTestHelper::testSort("Inseration Sort", insertionSort, arr3, n);
-    // SortTestHelper::testSort("Shell Sort", shellSort, arr4, n);
+    SortTestHelper::testSort("Shell Sort", shellSort, arr4, n);
     // SortTestHelper::testSort("MergeSort", mergeSort, arr5, n);
     // SortTestHelper::testSort("MergeSortBU", mergeSortBU, arr6, n);
     SortTestHelper::testSort("QuickSort", quickSort, arr7, n);
