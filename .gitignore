@@ -368,3 +368,4 @@ FodyWeavers.xsd
 # execute file
 *.exe
 >>>>>>> 083e06fbf639656e8205cc8cb5519ee27f936062
+.vscode/settings.json

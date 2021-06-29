@@ -17,12 +17,7 @@ public:
         int width;
         int tmp = 0;
         while(b < e) {
-            width = e - b; 
-            tmp = width * (height[b]<height[e] ? height[b] : height[e]);
-
-//            cout << "tmp = "  << tmp;
-            if(tmp > maxarea) maxarea = tmp;
-//            cout << "max = " << maxarea <<  endl;
+            maxarea = max(maxarea, min(height[b], height[e]) * (e - b));
 
             if(height[b] > height[e]) e--;
             else b++;
