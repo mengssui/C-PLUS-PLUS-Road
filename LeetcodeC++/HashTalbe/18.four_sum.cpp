@@ -5,6 +5,43 @@
 #include <algorithm>
 using namespace std;
 
+//2021年7月4日
+class Solution {
+public:
+    vector<vector<int>> fourSum(vector<int>& nums, int target) {
+      int size = nums.size();
+      int sum = 0;
+      if (size < 4) return {};
+
+      vector<vector<int>> ret;
+      sort(nums.begin(), nums.end());
+
+      for (int i = 0; i < size - 3; i++) {
+        if (i > 0 && nums[i] == nums[i-1]) continue;
+        sum = nums[i];
+        for (int j = i + 1; j < size - 2; j++) {
+          if (j - 1 > i && nums[j] == nums[j-1]) continue;
+          sum = nums[i] + nums[j]; //不能是+= ！！！！！
+          int tar = target - sum;
+          int head = j + 1, tail = size - 1;
+          while (head < tail) {
+            if (nums[head] + nums[tail] > tar) tail--;
+            else if (nums[head] + nums[tail] < tar) head++;
+            else {
+              if (head - 1 > j && nums[head] == nums[head-1]) {
+                head++, tail--;
+                continue;
+              }
+              ret.push_back({nums[i], nums[j], nums[head], nums[tail]});
+              head++, tail--;
+            }
+          }
+        }
+      }
+      return ret;
+    }
+};
+
 class Solution {
 public:
     // a + b + c + d = target

@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <string>
+#include <unordered_set>
 using namespace std;
 
 class Solution {
@@ -69,6 +70,7 @@ private:
     }
 };
 
+//方法一：
 //将26个字母映射到数组上
 //arr[i-'a'],将a-z依次映射到0-25
 
@@ -92,7 +94,16 @@ public:
 
 };
 
+//方法二：排序后比较是否字符串相等
+//方法三：使用hashtable set
+
 int main() {
+    unordered_multiset<char> myset;
+    myset.insert('a');
+    myset.insert('a');
+    cout << myset.size() << endl;
+    myset.erase('a');
+    cout << myset.size() << endl;
     string s,t; 
     Solution2 sl;
     while(cin>>s>>t) {
