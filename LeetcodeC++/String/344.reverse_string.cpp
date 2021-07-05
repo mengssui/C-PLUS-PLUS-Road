@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 class Solution {
@@ -26,13 +27,15 @@ public:
 
 int main() {
     vector<char> s{'h','e','l','l','o'};
+
     for(char i : s) {
         cout << i << " ";
     }
     cout << endl;
 
     Solution sl;
-    sl.reverseString(s);
+    //sl.reverseString(s);
+    reverse(s.begin(), s.end());
 
     for(char i : s) {
         cout << i << " ";
