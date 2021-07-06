@@ -6,7 +6,41 @@
  ************************************************************************/
 #include <iostream>
 #include <string>
+#include <algorithm>
 using namespace std;
+
+class Solution {
+public:
+    string reverseWords(string s) {
+        //delete head space
+        int head = 0, tail = 0;
+        while (s[tail] == ' ') tail++;
+        //delete insert space
+        for (; tail < s.size(); tail++) {
+            if (head > 0 && s[tail] == ' ' && s[tail - 1] == ' ') continue;
+            else {
+                s[head++] = s[tail];
+            }
+        }
+        //head is the end + 1
+
+        //delete till head and head
+        while (s[head-1] == ' ') head--;
+        int i = 0;
+        tail = 0;
+        for (; i < head; i++) {
+            if (s[i] == ' ') {
+                reverse(s.begin()+tail, s.begin() + i);
+                tail = i + 1;
+            } else if (i == head - 1) {
+                reverse(s.begin() + tail, s.begin() + head);
+            }
+        }
+        s.resize(head);
+        reverse(s.begin(), s.end());
+        return s;
+    }
+};
 
 class Solution {
 public:
