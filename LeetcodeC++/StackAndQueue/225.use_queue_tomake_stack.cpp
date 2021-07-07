@@ -9,6 +9,58 @@
 #include <queue>
 using namespace std;
 
+//2021年7月7日
+class MyStack {
+private:
+  queue<int> fir, sec, *in, *out;
+public:
+    /** Initialize your data structure here. */
+    MyStack() {
+      in = &fir;
+      out = &sec;
+    }
+    
+    /** Push element x onto stack. */
+    void push(int x) {
+      in->push(x);
+    }
+    
+    /** Removes the element on top of the stack and returns that element. */
+    int pop() {
+      if (this->empty()) return -1;
+      while(in->size() > 1) {
+        out->push(in->front());
+        in->pop();
+      }
+      int ret = in->front();
+      in->pop();
+      swap(in, out);
+      return ret;
+    }
+    
+    /** Get the top element. */
+    int top() {
+      int ret = this->pop();
+      if (ret == -1) return -1;
+      in->push(ret);
+      return ret;
+    }
+    
+    /** Returns whether the stack is empty. */
+    bool empty() {
+      return in->empty();
+    }
+};
+
+/**
+ * Your MyStack object will be instantiated and called as such:
+ * MyStack* obj = new MyStack();
+ * obj->push(x);
+ * int param_2 = obj->pop();
+ * int param_3 = obj->top();
+ * bool param_4 = obj->empty();
+ */
+
 class MyStack {
 private:
     queue<int> que,que_back;   //备份的一个队列, 也可以是用一个队列
