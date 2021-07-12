@@ -41,14 +41,57 @@ public:
 
         return ret;
     }
+
+    vector<int> topKFrequent2(vector<int>& nums, int k) {
+        typedef int val;
+        typedef int times;
+        unordered_map<val, times> valToTime;
+        for(int i : nums) {
+            valToTime[i]++;
+        } 
+
+        pair<int,int> s1(1,5), s2(2,4);
+
+        auto lam = [&](pair<val, times> &lhs, const pair<val, times> &rhs) {
+            return lhs.second > rhs.second;
+        };
+        
+        cout << boolalpha << lam(s1, s2);
+
+        typedef  decltype([](const pair<val, times> lhs, const pair<val, times> &rhs) -> bool{
+             return lhs.second > rhs.second;
+        }) ComType;
+
+        auto comp = [](const pair<val, times> lhs, const pair<val, times> &rhs) -> bool{
+             return lhs.second > rhs.second;
+        };
+        //auto prio_que = priority_queue<pair<val, times>, vector<pair<val, times>>, decltype(comp)> (comp);
+        priority_queue<pair<val, times>, vector<pair<val, times>>, decltype(comp)> prio_que(comp); //指定类型
+        //priority_queue<pair<val, times>, vector<pair<val, times>>, mycom> prio_que;
+
+        for (auto i : valToTime) {
+            prio_que.push(i);
+            if (prio_que.size() > k) prio_que.pop();
+        }
+
+        vector<int> ret(k);
+        for (int i = k-1; i >= 0; i--) {
+            ret[i] = prio_que.top().first;
+            prio_que.pop();
+        }
+        return ret;
+    }
+
 };
+
+//2021年7月11日的方法,利用multimap
 
 
 int main() {
 
     vector<int> vec{1,2,1,1,3,3,3,3,3,4,4};
     Solution s;
-    vector<int> ret = s.topKFrequent(vec,2);
+    vector<int> ret = s.topKFrequent2(vec,2);
 
     for(auto i : ret) {
         cout << i <<" ";
