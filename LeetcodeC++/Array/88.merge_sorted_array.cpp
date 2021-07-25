@@ -10,6 +10,16 @@ using namespace std;
 
 class Solution {
 public:
+    void merge2(vector<int>& nums1, int m, vector<int>& nums2, int n) {
+        int n1 = m-1, n2 = n-1;
+        int end = m + n - 1;
+        while (n2 >= 0) { //只有n2完全加入n1才是结束
+            if (n1 < 0 || nums1[n1] <= nums2[n2]) nums1[end--] = nums2[n2--];
+            else nums1[end--] = nums1[n1--];
+        }
+        return;
+    }
+
     void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
         vector<int> tmp;
         if (m == 0) return;
@@ -66,6 +76,7 @@ int main() {
         m++;
         n++;
     }
+    
 
     for ( int i = 0; i < m; i++ ) {
         cout << nums1[i] << " ";
@@ -77,7 +88,7 @@ int main() {
     cout << endl;
 
     Solution sol;
-    sol.merge(nums1, m , nums2, n);
+    sol.merge2(nums1, m , nums2, n);
 
     for (int i = 0; i < m + n; ++i) {
         printf("%d ", nums1[i]);

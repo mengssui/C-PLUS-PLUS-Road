@@ -13,15 +13,15 @@ class Solution {
 public:
     int minSubArrayLen(int s, vector<int>& nums) {
         int b = 0, sum = 0;
-        int minlen = nums.size()+1;
+        int minlen = nums.size()+1; //设置为不可能的值
         for (int i = 0; i < nums.size(); i++) {
             sum += nums[i];
             while(sum >= s) {
-                minlen = minlen < (i-b+1) ? minlen : (i-b+1);
+                minlen = minlen < (i-b+1) ? minlen : (i-b+1); //可放在whlie循环外部
                 sum -= nums[b++];
             }
         }
-        return minlen == nums.size()+1 ? 0 : minlen;
+        return minlen == nums.size()+1 ? 0 : minlen; //最后返回也要注意
     } 
 };
 

@@ -1,3 +1,11 @@
+/*
+ * @Descripttion: 
+ * @version: 0.1
+ * @Author: Mengbw
+ * @Date: 2021-07-03 21:00:04
+ * @LastEditors: Mengbw
+ * @LastEditTime: 2021-07-03 21:00:04
+ */
 //Copyright
 //License
 //Autho : Mengbw_
@@ -28,6 +36,7 @@ int main(){
 vector<int> twoSum(vector<int>& nums, int target) {
     vector<int> ret;
     map<int,int> num2i; //数组的值和序号 {nums[i], i}这样的map
+    num2i.insert({3,4});
     
     for(int j =0; j<=nums.size();j++){
         if(num2i.count(target-nums[j])!=0){ //顺序不能调换，num2i[target-nums[j]]!=j 会创建num2i[target-nums[j]]=0;

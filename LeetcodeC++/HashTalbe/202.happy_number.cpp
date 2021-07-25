@@ -23,7 +23,7 @@ public:
         return true;
     }
     int getSum(int n) {   //按位平方和
-        int sum = 0;
+        int sum = 0; //记得初始化为0
         while(n) {
             sum += (n%10) * (n%10);  
             n = n/10;

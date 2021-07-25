@@ -17,10 +17,10 @@ public:
             if(numbers[b] + numbers[e] > target) e--;
             else if (numbers[b] + numbers[e] < target) b++;
             else break;
-    }
-    ret.push_back(b+1);
-    ret.push_back(e+1);
-    return ret;
+        }
+        ret.push_back(b+1);
+        ret.push_back(e+1);
+        return ret;
     }
 };
 
@@ -31,7 +31,6 @@ int main() {
         cout << i << " ";
     }
     cout << endl;
-
     
     Solution s;
     while(cin >> target) {
