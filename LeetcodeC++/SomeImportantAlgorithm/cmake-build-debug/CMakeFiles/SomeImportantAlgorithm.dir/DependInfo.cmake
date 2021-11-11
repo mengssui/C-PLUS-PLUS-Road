@@ -4,7 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "E:/MyStudyFile/Study_C_PLUS_PLUS/C-PLUS-PLUS-Road/LeetcodeC++/SomeImportantAlgorithm/main.cpp" "E:/MyStudyFile/Study_C_PLUS_PLUS/C-PLUS-PLUS-Road/LeetcodeC++/SomeImportantAlgorithm/cmake-build-debug/CMakeFiles/SomeImportantAlgorithm.dir/main.cpp.obj"
+  "E:/MyStudyFile/Study_C_PLUS_PLUS/C-PLUS-PLUS-Road/LeetcodeC++/SomeImportantAlgorithm/3.thread.cpp" "E:/MyStudyFile/Study_C_PLUS_PLUS/C-PLUS-PLUS-Road/LeetcodeC++/SomeImportantAlgorithm/cmake-build-debug/CMakeFiles/SomeImportantAlgorithm.dir/3.thread.cpp.obj"
+  "E:/MyStudyFile/Study_C_PLUS_PLUS/C-PLUS-PLUS-Road/LeetcodeC++/SomeImportantAlgorithm/Sort.cpp" "E:/MyStudyFile/Study_C_PLUS_PLUS/C-PLUS-PLUS-Road/LeetcodeC++/SomeImportantAlgorithm/cmake-build-debug/CMakeFiles/SomeImportantAlgorithm.dir/Sort.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

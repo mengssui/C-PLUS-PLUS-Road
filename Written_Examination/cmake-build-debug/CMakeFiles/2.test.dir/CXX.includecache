@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+E:/MyStudyFile/Study_C_PLUS_PLUS/C-PLUS-PLUS-Road/Written_Examination/Tencent/2.test.cpp
+iostream
+-
+cstdio
+-
+fstream
+-
+algorithm
+-
+cmath
+-
+deque
+-
+vector
+-
+queue
+-
+string
+-
+cstring
+-
+map
+-
+stack
+-
+set
+-
+

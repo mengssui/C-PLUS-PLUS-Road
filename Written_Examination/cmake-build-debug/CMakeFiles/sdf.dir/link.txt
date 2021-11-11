@@ -1,0 +1,3 @@
+"D:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\sdf.dir/objects.a
+C:\mingw64\bin\ar.exe cr CMakeFiles\sdf.dir/objects.a @CMakeFiles\sdf.dir\objects1.rsp
+C:\mingw64\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\sdf.dir/objects.a -Wl,--no-whole-archive  -o sdf.exe -Wl,--out-implib,libsdf.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\sdf.dir\linklibs.rsp
