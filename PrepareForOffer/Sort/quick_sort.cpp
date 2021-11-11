@@ -4,7 +4,7 @@
  * @Author: Mengbw
  * @Date: 2021-06-26 15:57:10
  * @LastEditors: Mengbw
- * @LastEditTime: 2021-06-26 17:15:17
+ * @LastEditTime: 2021-08-16 18:56:39
  */
 #include <iostream>
 #include <vector>
@@ -67,14 +67,15 @@ void quickSort2(std::vector<int>& arr) {
 
 int main() {
 	std::vector<int> arr;
-	for (int i = 0; i < 20; i++) {
+	for (int i = 0; i < 60; i++) {
 		int tmp = rand() % 20;
 		arr.push_back(tmp);
 		std::cout << tmp << " ";
 	}
 	std::cout << std::endl;
 
-	quickSort2(arr);
+
+	quickSort(arr);
 
 	for (auto i : arr) std::cout << i << " ";
 	std::cout << std::endl;
