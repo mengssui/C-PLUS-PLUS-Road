@@ -4,7 +4,7 @@
  * @Author: Mengbw
  * @Date: 2021-06-26 11:02:07
  * @LastEditors: Mengbw
- * @LastEditTime: 2021-06-26 15:54:49
+ * @LastEditTime: 2021-08-27 20:29:44
  */
 #include <iostream>
 #include <cstdlib>
@@ -44,5 +44,6 @@ int main() {
 	}
 
 	std::cout << std::endl;
+	system("pause");
 	return 0;
 }
